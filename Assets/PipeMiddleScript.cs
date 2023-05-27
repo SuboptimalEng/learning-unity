@@ -16,9 +16,9 @@ public class PipeMiddleScript : MonoBehaviour
     void Update() { }
 
     // note: unable to get intellisense to suggest "OnTriggerEnter2D"
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.layer == 3)
+        if (other.gameObject.layer == 3)
         {
             logic.addScore(1);
         }

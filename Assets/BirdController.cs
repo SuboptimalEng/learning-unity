@@ -26,7 +26,7 @@ public class BirdController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collission)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         logic.gameOver();
         birdIsAlive = false;
