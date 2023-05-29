@@ -8,7 +8,7 @@ public class BirdController : MonoBehaviour
     public float flapStrength;
     public LogicManagerScript logic;
 
-    private bool birdIsAlive = true;
+    public bool birdIsAlive = true;
 
     // Start is called before the first frame update
     void Start()

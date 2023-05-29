@@ -20,7 +20,10 @@ public class PipeMiddleScript : MonoBehaviour
     {
         if (other.gameObject.layer == 3)
         {
-            logic.addScore(1);
+            if (other.gameObject.GetComponent<BirdController>().birdIsAlive)
+            {
+                logic.addScore(1);
+            }
         }
     }
 }
