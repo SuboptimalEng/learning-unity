@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PipeMoveScript : MonoBehaviour
 {
-    public int moveSpeed = 5;
-    public int deadZone = -45;
+    [SerializeField]
+    private int moveSpeed;
+
+    [SerializeField]
+    private int deadZone;
 
     // Start is called before the first frame update
     void Start() { }

@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipe: {fileID: 1931295873011616722, guid: c0e14fb1736334effa8ace9aecd26a58, type: 3}
-  spawnRate: 2.5
   timer: 0
+  spawnRate: 1.25
   heightOffset: 5
 --- !u!4 &118155006
 Transform:
@@ -378,7 +378,6 @@ MonoBehaviour:
   myRigidBody: {fileID: 805207038}
   flapStrength: 20
   logic: {fileID: 0}
-  birdIsAlive: 1
 --- !u!58 &805207040
 CircleCollider2D:
   m_ObjectHideFlags: 0

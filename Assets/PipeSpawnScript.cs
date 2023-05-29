@@ -5,14 +5,19 @@ using UnityEngine;
 public class PipeSpawnScript : MonoBehaviour
 {
     public GameObject pipe;
-    public float spawnRate = 2.5f;
-    public float timer = 0;
-    public float heightOffset = 5;
+
+    [SerializeField]
+    private float timer;
+
+    [SerializeField]
+    private float spawnRate;
+
+    [SerializeField]
+    private float heightOffset;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Instantiate(pipe, transform.position, transform.rotation);
         spawnPipe();
     }
 
