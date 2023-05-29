@@ -5190,6 +5190,7 @@ MonoBehaviour:
   myRigidBody: {fileID: 805207038}
   flapStrength: 20
   logic: {fileID: 0}
+  birdIsAlive: 1
 --- !u!58 &805207040
 CircleCollider2D:
   m_ObjectHideFlags: 0
