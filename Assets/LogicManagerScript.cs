@@ -30,6 +30,11 @@ public class LogicManagerScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void changeToTitleScene()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
+
     public void gameOver()
     {
         gameOverScreen.SetActive(true);
