@@ -1,6 +1,6 @@
 # 📚 Learning Unity
 
-### 01-flappy-bird
+## Flappy Bird
 
 - Following [GMTK's Flappy Bird tutorial](https://www.youtube.com/watch?v=XtQMytORBmM) on YouTube.
 
