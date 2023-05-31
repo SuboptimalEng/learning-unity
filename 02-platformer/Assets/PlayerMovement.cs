@@ -4,20 +4,57 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D myRigedBody;
+    // by default, variables are private
+    Rigidbody2D rb;
+    Animator anim;
+
+    float dx = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        myRigedBody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+
+        // can be done via the UI as well
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        dx = Input.GetAxis("Horizontal");
+        dx = Input.GetAxisRaw("Horizontal");
+
+        float dy = Input.GetAxis("Jump");
+
+        Debug.Log("dx: " + dx);
+        Debug.Log("dy: " + dy);
+
+        rb.velocity = new Vector2(dx * 7, rb.velocity.y);
+
+        // if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
-            myRigedBody.velocity = new Vector3(0, 14, 0);
+            rb.velocity = new Vector2(rb.velocity.x, 14);
+        }
+
+        updateAnimationState();
+    }
+
+    void updateAnimationState()
+    {
+        if (dx > 0)
+        {
+            anim.SetBool("isRunning", true);
+        }
+        else if (dx < 0)
+        {
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
         }
     }
 }
