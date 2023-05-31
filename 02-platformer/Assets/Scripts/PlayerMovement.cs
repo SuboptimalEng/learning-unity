@@ -7,9 +7,13 @@ public class PlayerMovement : MonoBehaviour
     // by default, variables are private
     Rigidbody2D rb;
     Animator anim;
+    BoxCollider2D box;
     SpriteRenderer sprite;
 
     float dx = 0;
+
+    [SerializeField]
+    LayerMask jumpableGround;
 
     [SerializeField]
     [Range(5, 9)]
@@ -34,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        box = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
 
         // can be done via the UI as well
@@ -54,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(dx * moveSpeed, rb.velocity.y);
 
         // if (Input.GetKeyDown(KeyCode.Space))
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
@@ -90,5 +95,17 @@ public class PlayerMovement : MonoBehaviour
         }
 
         anim.SetInteger("state", (int)m_state);
+    }
+
+    bool isGrounded()
+    {
+        return Physics2D.BoxCast(
+            box.bounds.center,
+            box.bounds.size,
+            0f,
+            Vector2.down,
+            0.1f,
+            jumpableGround
+        );
     }
 }

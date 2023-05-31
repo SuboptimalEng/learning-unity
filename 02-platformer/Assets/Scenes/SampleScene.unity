@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 931163486}
   - component: {fileID: 931163488}
   - component: {fileID: 931163487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4636,6 +4636,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e88dc16ecaa4a93ac6bc184e23eae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpableGround:
+    serializedVersion: 2
+    m_Bits: 0
   moveSpeed: 7
   jumpForce: 14
 --- !u!95 &1734329096
