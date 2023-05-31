@@ -12688,6 +12688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff0d7c37a73d340cdb1944fbcb4df1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cherriesText: {fileID: 673538652}
 --- !u!4 &1739318088 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8424017787785842394, guid: a3d7080e1cc474ae8b6bff88d14df320, type: 3}

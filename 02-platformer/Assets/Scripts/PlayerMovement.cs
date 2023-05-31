@@ -71,7 +71,15 @@ public class PlayerMovement : MonoBehaviour
     {
         MovementState m_state = MovementState.idle;
 
-        if (dx > 0)
+        if (rb.velocity.y > 0.01f)
+        {
+            m_state = MovementState.jumping;
+        }
+        else if (rb.velocity.y < -0.01f)
+        {
+            m_state = MovementState.falling;
+        }
+        else if (dx > 0)
         {
             sprite.flipX = false;
             m_state = MovementState.running;
@@ -80,14 +88,6 @@ public class PlayerMovement : MonoBehaviour
         {
             sprite.flipX = true;
             m_state = MovementState.running;
-        }
-        else if (rb.velocity.y > 0.01f)
-        {
-            m_state = MovementState.jumping;
-        }
-        else if (rb.velocity.y < -0.01f)
-        {
-            m_state = MovementState.falling;
         }
         else
         {
