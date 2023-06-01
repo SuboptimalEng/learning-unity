@@ -31,8 +31,6 @@ public class PlayerMovement : MonoBehaviour
         falling
     };
 
-    private MovementState state = MovementState.idle;
-
     // Start is called before the first frame update
     void Start()
     {
