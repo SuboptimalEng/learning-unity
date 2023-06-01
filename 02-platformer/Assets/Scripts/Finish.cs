@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
@@ -21,6 +22,17 @@ public class Finish : MonoBehaviour
         {
             finishSoundEffect.Play();
             soundEffectPlayed = true;
+            Invoke("CompleteLevel", 2f);
         }
+    }
+
+    void CompleteLevel()
+    {
+        int buildIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (buildIndex >= SceneManager.sceneCountInBuildSettings)
+        {
+            buildIndex = 0;
+        }
+        SceneManager.LoadScene(buildIndex);
     }
 }
