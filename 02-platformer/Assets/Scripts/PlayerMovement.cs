@@ -23,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
     [Range(10, 18)]
     float jumpForce = 14;
 
+    [SerializeField]
+    AudioSource jumpSoundEffect;
+
     private enum MovementState
     {
         idle,
@@ -59,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         // if (Input.GetKeyDown(KeyCode.Space))
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
+            jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
