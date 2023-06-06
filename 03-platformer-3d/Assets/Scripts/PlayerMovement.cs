@@ -38,34 +38,31 @@ public class PlayerMovement : MonoBehaviour
 
         v.x = horizontalInput * movementSpeed;
         v.z = verticalInput * movementSpeed;
+        rb.velocity = v;
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            v.y = jumpForce;
+            // v.y = jumpForce;
+            Jump();
         }
+    }
 
+    private void Jump()
+    {
+        Vector3 v = rb.velocity;
+        v.y = jumpForce;
         rb.velocity = v;
+    }
 
-        // if (Input.GetKeyDown("space"))
-        // {
-        //     rb.velocity = Vector3.up * jumpForce;
-        // }
-        // if (Input.GetKey("up"))
-        // {
-        //     rb.velocity = Vector3.forward * movementSpeed;
-        // }
-        // if (Input.GetKey("down"))
-        // {
-        //     rb.velocity = Vector3.back * movementSpeed;
-        // }
-        // if (Input.GetKey("left"))
-        // {
-        //     rb.velocity = Vector3.left * movementSpeed;
-        // }
-        // if (Input.GetKey("right"))
-        // {
-        //     rb.velocity = Vector3.right * movementSpeed;
-        // }
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("hi");
+        if (other.gameObject.CompareTag("Enemy Head"))
+        {
+            Debug.Log("enemy head");
+            Destroy(other.transform.parent.gameObject);
+            Jump();
+        }
     }
 
     bool IsGrounded()
