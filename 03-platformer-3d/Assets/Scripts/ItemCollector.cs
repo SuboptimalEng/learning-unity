@@ -10,6 +10,9 @@ public class ItemCollector : MonoBehaviour
     [SerializeField]
     Text coinsText;
 
+    [SerializeField]
+    AudioSource collectSound;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("Coin Collectible"))
@@ -17,6 +20,7 @@ public class ItemCollector : MonoBehaviour
             Destroy(other.gameObject);
             coins++;
             coinsText.text = "Coins: " + coins.ToString();
+            collectSound.Play();
         }
     }
 }

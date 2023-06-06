@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     [SerializeField]
+    AudioSource jumpSound;
+
+    [SerializeField]
     [Range(4, 12)]
     int jumpForce = 8;
 
@@ -24,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        // audio = GetComponent<AudioSource>();
+
         rb.freezeRotation = true;
     }
 
@@ -52,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 v = rb.velocity;
         v.y = jumpForce;
         rb.velocity = v;
+        jumpSound.Play();
     }
 
     private void OnCollisionEnter(Collision other)

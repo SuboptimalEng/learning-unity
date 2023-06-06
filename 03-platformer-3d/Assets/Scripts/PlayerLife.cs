@@ -7,6 +7,9 @@ public class PlayerLife : MonoBehaviour
 {
     bool isAlive = true;
 
+    [SerializeField]
+    AudioSource deathSound;
+
     void Update()
     {
         // gameObject.transform.position.y vs transform.position.y
@@ -29,7 +32,7 @@ public class PlayerLife : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<PlayerMovement>().enabled = false;
-        // RestartLevel();
+        deathSound.Play();
         isAlive = false;
         Invoke(nameof(RestartLevel), 1.0f);
     }
