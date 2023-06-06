@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
+    void Update()
+    {
+        // gameObject.transform.position.y vs transform.position.y
+        if (transform.position.y < -4.0)
+        {
+            Die();
+        }
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Enemy Tag"))
