@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy Tag
   - Enemy Head
+  - Coin Collectible
   layers:
   - Default
   - TransparentFX
