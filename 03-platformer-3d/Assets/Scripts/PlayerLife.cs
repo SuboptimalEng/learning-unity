@@ -31,7 +31,6 @@ public class PlayerLife : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = false;
         // RestartLevel();
         isAlive = false;
-        Debug.Log("Ded");
         Invoke(nameof(RestartLevel), 1.0f);
     }
 

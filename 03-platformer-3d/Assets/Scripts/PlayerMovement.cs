@@ -56,10 +56,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("hi");
         if (other.gameObject.CompareTag("Enemy Head"))
         {
-            Debug.Log("enemy head");
             Destroy(other.transform.parent.gameObject);
             Jump();
         }
