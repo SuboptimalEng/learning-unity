@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
+    bool isAlive = true;
+
     void Update()
     {
         // gameObject.transform.position.y vs transform.position.y
-        if (transform.position.y < -4.0)
+        if (transform.position.y < -4.0 && isAlive)
         {
             Die();
         }
@@ -28,6 +30,8 @@ public class PlayerLife : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<PlayerMovement>().enabled = false;
         // RestartLevel();
+        isAlive = false;
+        Debug.Log("Ded");
         Invoke(nameof(RestartLevel), 1.0f);
     }
 
