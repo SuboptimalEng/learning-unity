@@ -1,16 +1,16 @@
 # 📚 Learning Unity
 
-## 01 - Flappy Bird
+## 3D Platformer
 
-- Reference: [GMTK's Flappy Bird Tutorial](https://www.youtube.com/watch?v=XtQMytORBmM)
+- Reference: [Coding in Flow's 3D Platformer Tutorial](https://www.youtube.com/watch?v=n0GQL5JgJcY)
 
-## 02 - Platformer
+## Platformer
 
 - Reference: [Coding in Flow's Platformer Tutorial](https://www.youtube.com/watch?v=Ii-scMenaOQ)
 
-## 03 - Platformer 3D
+## Flappy Bird
 
-- Reference: [Coding in Flow's 3D Platformer Tutorial](https://www.youtube.com/watch?v=n0GQL5JgJcY)
+- Reference: [GMTK's Flappy Bird Tutorial](https://www.youtube.com/watch?v=XtQMytORBmM)
 
 ## License
 
