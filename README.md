@@ -2,15 +2,15 @@
 
 ## 01 - Flappy Bird
 
-- Made by following [GMTK's Flappy Bird tutorial](https://www.youtube.com/watch?v=XtQMytORBmM) on YouTube.
+- Reference: [GMTK's Flappy Bird Tutorial](https://www.youtube.com/watch?v=XtQMytORBmM)
 
 ## 02 - Platformer
 
-- Made by following [Coding in Flow's platformer tutorial](https://www.youtube.com/watch?v=Ii-scMenaOQ) on YouTube.
+- Reference: [Coding in Flow's Platformer Tutorial](https://www.youtube.com/watch?v=Ii-scMenaOQ)
 
 ## 03 - Platformer 3D
 
-- Made by following [Coding in Flow's 3D platformer tutorial](https://www.youtube.com/watch?v=n0GQL5JgJcY) on YouTube.
+- Reference: [Coding in Flow's 3D Platformer Tutorial](https://www.youtube.com/watch?v=n0GQL5JgJcY)
 
 ## License
 
