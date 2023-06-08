@@ -14,7 +14,13 @@ public class ColorGenerator
         this.settings = settings;
         if (texture == null || texture.height != settings.biomeColorSettings.biomes.Length)
         {
-            texture = new Texture2D(textureResolution, settings.biomeColorSettings.biomes.Length);
+            // texture = new Texture2D(textureResolution, settings.biomeColorSettings.biomes.Length);
+            texture = new Texture2D(
+                textureResolution,
+                settings.biomeColorSettings.biomes.Length,
+                TextureFormat.RGBA32,
+                false
+            );
         }
         biomeNoiseFilter = NoiseFilterFactory.CreateNoiseFilter(settings.biomeColorSettings.noise);
     }
