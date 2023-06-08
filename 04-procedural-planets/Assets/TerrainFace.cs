@@ -82,8 +82,6 @@ public class TerrainFace
             }
         }
 
-        Debug.Log(uv);
-
         mesh.uv = uv;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
-    [Range(2, 128)]
+    [Range(2, 256)]
     public int resolution = 10;
     public bool autoUpdate = true;
 

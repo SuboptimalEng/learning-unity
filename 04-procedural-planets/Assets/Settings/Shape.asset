@@ -70,10 +70,10 @@ MonoBehaviour:
         minValue: 0
       ridgedNoiseSettings:
         numOfLayers: 3
-        strength: 1.5
+        strength: 2.1
         baseRoughness: 1.62
         roughness: 2.75
-        persistence: 1
+        persistence: 0.83
         center: {x: 0, y: 0, z: 0}
         minValue: 0
         weightMultiplier: 0.8
