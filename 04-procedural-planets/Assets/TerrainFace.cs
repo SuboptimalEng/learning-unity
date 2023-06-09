@@ -26,9 +26,6 @@ public class TerrainFace
     {
         Vector3[] verticies = new Vector3[resolution * resolution];
 
-        // numOfSquares = (resolution - 1) * (resolution - 1)
-        // numOfTriangles = numOfSquares * 2
-        // num = numOfTriangles * 3
         int[] triangles = new int[(resolution - 1) * (resolution - 1) * 2 * 3];
         int triIndex = 0;
 
