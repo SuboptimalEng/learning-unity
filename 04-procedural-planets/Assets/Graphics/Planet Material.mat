@@ -75,6 +75,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Smoothness: 0.59
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -82,7 +83,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ElevationMinMax: {r: 1.92, g: 2.416218, b: 0, a: 0}
+    - _ElevationMinMax: {r: -0.073055826, g: 0.12345745, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _elevationMinMax: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

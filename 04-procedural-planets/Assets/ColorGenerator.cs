@@ -16,7 +16,7 @@ public class ColorGenerator
         {
             // texture = new Texture2D(textureResolution, settings.biomeColorSettings.biomes.Length);
             texture = new Texture2D(
-                textureResolution,
+                textureResolution * 2,
                 settings.biomeColorSettings.biomes.Length,
                 TextureFormat.RGBA32,
                 false
@@ -60,9 +60,19 @@ public class ColorGenerator
         int colorIndex = 0;
         foreach (var biome in settings.biomeColorSettings.biomes)
         {
-            for (int i = 0; i < textureResolution; i++)
+            for (int i = 0; i < textureResolution * 2; i++)
             {
-                Color gradientColor = biome.gradient.Evaluate(i / (textureResolution - 1f));
+                Color gradientColor;
+                if (i < textureResolution)
+                {
+                    gradientColor = settings.oceanColor.Evaluate(i / (textureResolution - 1f));
+                }
+                else
+                {
+                    gradientColor = biome.gradient.Evaluate(
+                        (i - textureResolution) / (textureResolution - 1f)
+                    );
+                }
                 Color tintColor = biome.tint;
 
                 colors[colorIndex] =
