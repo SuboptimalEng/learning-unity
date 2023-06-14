@@ -72,7 +72,7 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    public MapData GenerateMapData()
+    MapData GenerateMapData()
     {
         float[,] noiseMap = Noise.GenerateNoiseMap(
             mapChunkSize,
