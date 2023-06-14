@@ -13,11 +13,10 @@ public class MapGenerator : MonoBehaviour
 
     public DrawMode drawMode;
 
-    [Range(1, 100)]
-    public int mapWidth;
+    const int mapChunkSize = 241;
 
-    [Range(1, 100)]
-    public int mapHeight;
+    [Range(0, 6)]
+    public int levelOfDetail;
 
     [Range(1, 50)]
     public float noiseScale;
@@ -47,8 +46,8 @@ public class MapGenerator : MonoBehaviour
     public void GenerateMap()
     {
         float[,] noiseMap = Noise.GenerateNoiseMap(
-            mapWidth,
-            mapHeight,
+            mapChunkSize,
+            mapChunkSize,
             seed,
             noiseScale,
             octaves,
@@ -57,10 +56,10 @@ public class MapGenerator : MonoBehaviour
             offset
         );
 
-        Color[] colorMap = new Color[mapWidth * mapHeight];
-        for (int y = 0; y < mapHeight; y++)
+        Color[] colorMap = new Color[mapChunkSize * mapChunkSize];
+        for (int y = 0; y < mapChunkSize; y++)
         {
-            for (int x = 0; x < mapWidth; x++)
+            for (int x = 0; x < mapChunkSize; x++)
             {
                 float currentHeight = noiseMap[x, y];
                 for (int i = 0; i < regions.Length; i++)
@@ -68,7 +67,7 @@ public class MapGenerator : MonoBehaviour
                     if (currentHeight < regions[i].height)
                     {
                         // note: why is this y * mapWidth?
-                        colorMap[y * mapWidth + x] = regions[i].color;
+                        colorMap[y * mapChunkSize + x] = regions[i].color;
                         break;
                     }
                 }
@@ -83,14 +82,19 @@ public class MapGenerator : MonoBehaviour
         else if (drawMode == DrawMode.ColorMap)
         {
             display.DrawTexture(
-                TextureGenerator.TextureFromColorMap(colorMap, mapWidth, mapHeight)
+                TextureGenerator.TextureFromColorMap(colorMap, mapChunkSize, mapChunkSize)
             );
         }
         else if (drawMode == DrawMode.Mesh)
         {
             display.DrawMesh(
-                MeshGenerator.GenerateTerrainMesh(noiseMap, meshHeightMultiplier, meshHeightCurve),
-                TextureGenerator.TextureFromColorMap(colorMap, mapWidth, mapHeight)
+                MeshGenerator.GenerateTerrainMesh(
+                    noiseMap,
+                    meshHeightMultiplier,
+                    meshHeightCurve,
+                    levelOfDetail
+                ),
+                TextureGenerator.TextureFromColorMap(colorMap, mapChunkSize, mapChunkSize)
             );
         }
     }
