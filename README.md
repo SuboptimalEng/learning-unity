@@ -19,6 +19,7 @@
 ## Procedural Terrain Generation
 
 - [Sebastian Lague's Procedural Terrain Generation Tutorial](https://www.youtube.com/watch?v=wbpMiKiSKm8)
+- Completed 14/21 tutorials in the series.
 
 ## Gradient Editor
 
