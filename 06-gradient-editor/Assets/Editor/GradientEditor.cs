@@ -10,17 +10,30 @@ public class GradientEditor : EditorWindow
     const float keyWidth = 10;
     const float keyHeight = 20;
 
+    Rect gradientPreviewRect;
+    Rect[] keyRects;
+    bool mouseIsDownOverKey;
+    int selectedKeyIndex;
+    bool needsRepaint;
+
     private void OnGUI()
     {
-        Event guiEvent = Event.current;
-        Rect gradientPreviewRect = new Rect(
-            borderSize,
-            borderSize,
-            position.width - 2 * borderSize,
-            25
-        );
+        Draw();
+        HandleInput();
+
+        if (needsRepaint)
+        {
+            Repaint();
+            needsRepaint = false;
+        }
+    }
+
+    void Draw()
+    {
+        gradientPreviewRect = new Rect(borderSize, borderSize, position.width - 2 * borderSize, 25);
         GUI.DrawTexture(gradientPreviewRect, gradient.GetTexture((int)gradientPreviewRect.width));
 
+        keyRects = new Rect[gradient.NumKeys];
         for (int i = 0; i < gradient.NumKeys; i++)
         {
             CustomGradient.ColorKey key = gradient.GetKey(i);
@@ -30,19 +43,72 @@ public class GradientEditor : EditorWindow
                 keyWidth,
                 keyHeight
             );
+            if (i == selectedKeyIndex)
+            {
+                EditorGUI.DrawRect(
+                    new Rect(keyRect.x - 2, keyRect.y - 2, keyRect.width + 4, keyRect.height + 4),
+                    Color.black
+                );
+            }
             EditorGUI.DrawRect(keyRect, key.Color);
+            keyRects[i] = keyRect;
         }
+    }
 
+    void HandleInput()
+    {
+        Event guiEvent = Event.current;
         if (guiEvent.type == EventType.MouseDown && guiEvent.button == 0)
         {
-            Color randomColor = new Color(Random.value, Random.value, Random.value);
+            for (int i = 0; i < keyRects.Length; i++)
+            {
+                if (keyRects[i].Contains(guiEvent.mousePosition))
+                {
+                    mouseIsDownOverKey = true;
+                    selectedKeyIndex = i;
+                    needsRepaint = true;
+                    break;
+                }
+            }
+
+            if (!mouseIsDownOverKey)
+            {
+                Color randomColor = new Color(Random.value, Random.value, Random.value);
+                float keyTime = Mathf.InverseLerp(
+                    gradientPreviewRect.x,
+                    gradientPreviewRect.xMax,
+                    guiEvent.mousePosition.x
+                );
+                selectedKeyIndex = gradient.AddKey(randomColor, keyTime);
+                mouseIsDownOverKey = true;
+                needsRepaint = true;
+            }
+        }
+
+        if (guiEvent.type == EventType.MouseUp && guiEvent.button == 0)
+        {
+            mouseIsDownOverKey = false;
+        }
+
+        if (mouseIsDownOverKey && guiEvent.type == EventType.MouseDrag && guiEvent.button == 0)
+        {
             float keyTime = Mathf.InverseLerp(
                 gradientPreviewRect.x,
                 gradientPreviewRect.xMax,
                 guiEvent.mousePosition.x
             );
-            gradient.AddKey(randomColor, keyTime);
-            Repaint();
+            selectedKeyIndex = gradient.UpdateKeyTime(selectedKeyIndex, keyTime);
+            needsRepaint = true;
+        }
+
+        if (guiEvent.keyCode == KeyCode.Backspace && guiEvent.type == EventType.KeyDown)
+        {
+            gradient.RemoveKey(selectedKeyIndex);
+            if (selectedKeyIndex >= gradient.NumKeys)
+            {
+                selectedKeyIndex--;
+            }
+            needsRepaint = true;
         }
     }
 

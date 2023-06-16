@@ -32,7 +32,22 @@ public class CustomGradient
         return Color.Lerp(keyLeft.Color, keyRight.Color, blendTime);
     }
 
-    public void AddKey(Color color, float time)
+    public void RemoveKey(int index)
+    {
+        if (keys.Count >= 2)
+        {
+            keys.RemoveAt(index);
+        }
+    }
+
+    public int UpdateKeyTime(int index, float time)
+    {
+        Color oldColor = keys[index].Color;
+        RemoveKey(index);
+        return AddKey(oldColor, time);
+    }
+
+    public int AddKey(Color color, float time)
     {
         ColorKey newKey = new ColorKey(color, time);
         for (int i = 0; i < keys.Count; i++)
@@ -40,10 +55,11 @@ public class CustomGradient
             if (newKey.Time < keys[i].Time)
             {
                 keys.Insert(i, newKey);
-                return;
+                return i;
             }
         }
         keys.Add(newKey);
+        return keys.Count - 1;
     }
 
     public int NumKeys
