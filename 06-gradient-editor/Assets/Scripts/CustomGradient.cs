@@ -47,6 +47,11 @@ public class CustomGradient
         return AddKey(oldColor, time);
     }
 
+    public void UpdateKeyColor(int index, Color col)
+    {
+        keys[index] = new ColorKey(col, keys[index].Time);
+    }
+
     public int AddKey(Color color, float time)
     {
         ColorKey newKey = new ColorKey(color, time);

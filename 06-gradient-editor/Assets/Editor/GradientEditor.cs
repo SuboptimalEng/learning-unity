@@ -53,6 +53,24 @@ public class GradientEditor : EditorWindow
             EditorGUI.DrawRect(keyRect, key.Color);
             keyRects[i] = keyRect;
         }
+
+        Rect settingsRect = new Rect(
+            borderSize,
+            keyRects[0].yMax + borderSize,
+            position.width - borderSize * 2,
+            position.height
+        );
+
+        GUILayout.BeginArea(settingsRect);
+
+        EditorGUI.BeginChangeCheck();
+        Color newColor = EditorGUILayout.ColorField(gradient.GetKey(selectedKeyIndex).Color);
+        if (EditorGUI.EndChangeCheck())
+        {
+            gradient.UpdateKeyColor(selectedKeyIndex, newColor);
+        }
+
+        GUILayout.EndArea();
     }
 
     void HandleInput()
