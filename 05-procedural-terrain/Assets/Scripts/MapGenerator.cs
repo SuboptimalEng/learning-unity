@@ -18,7 +18,7 @@ public class MapGenerator : MonoBehaviour
 
     public Noise.NormalizeMode normalizeMode;
 
-    public const int mapChunkSize = 239;
+    public bool useFlatShading;
 
     [Range(0, 6)]
     public int editorPreviewLOD;
@@ -38,7 +38,7 @@ public class MapGenerator : MonoBehaviour
     [Range(1, 100)]
     public int seed;
 
-    [Range(1, 50)]
+    [Range(1, 200)]
     public float meshHeightMultiplier;
     public AnimationCurve meshHeightCurve;
 
@@ -58,6 +58,27 @@ public class MapGenerator : MonoBehaviour
     void Awake()
     {
         falloffMap = FalloffGenerator.GenerateFalloffMap(mapChunkSize);
+    }
+
+    static MapGenerator instance;
+
+    public static int mapChunkSize
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindAnyObjectByType<MapGenerator>();
+            }
+            if (instance.useFlatShading)
+            {
+                return 95;
+            }
+            else
+            {
+                return 239;
+            }
+        }
     }
 
     public void DrawMapInEditor()
@@ -82,7 +103,8 @@ public class MapGenerator : MonoBehaviour
                     mapData.heightMap,
                     meshHeightMultiplier,
                     meshHeightCurve,
-                    editorPreviewLOD
+                    editorPreviewLOD,
+                    useFlatShading
                 ),
                 TextureGenerator.TextureFromColorMap(mapData.colorMap, mapChunkSize, mapChunkSize)
             );
@@ -132,7 +154,8 @@ public class MapGenerator : MonoBehaviour
             mapData.heightMap,
             meshHeightMultiplier,
             meshHeightCurve,
-            lod
+            lod,
+            useFlatShading
         );
         lock (meshDataThreadInfoQueue)
         {
