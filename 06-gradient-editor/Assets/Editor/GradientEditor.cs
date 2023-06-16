@@ -63,12 +63,17 @@ public class GradientEditor : EditorWindow
 
         GUILayout.BeginArea(settingsRect);
 
+        // Color picker
         EditorGUI.BeginChangeCheck();
         Color newColor = EditorGUILayout.ColorField(gradient.GetKey(selectedKeyIndex).Color);
         if (EditorGUI.EndChangeCheck())
         {
             gradient.UpdateKeyColor(selectedKeyIndex, newColor);
         }
+
+        // Blend mode picker
+        gradient.blendMode = (CustomGradient.BlendMode)
+            EditorGUILayout.EnumPopup("Blend Mode", gradient.blendMode);
 
         GUILayout.EndArea();
     }

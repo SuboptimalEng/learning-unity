@@ -5,31 +5,48 @@ using UnityEngine;
 [System.Serializable]
 public class CustomGradient
 {
+    public enum BlendMode
+    {
+        Linear,
+        Discrete
+    };
+
+    public BlendMode blendMode;
+
     [SerializeField]
     List<ColorKey> keys = new List<ColorKey>();
 
+    public CustomGradient()
+    {
+        AddKey(Color.white, 0);
+        AddKey(Color.black, 1);
+    }
+
     public Color Evaluate(float time)
     {
-        if (keys.Count == 0)
-        {
-            return Color.white;
-        }
-
         ColorKey keyLeft = keys[0];
         ColorKey keyRight = keys[keys.Count - 1];
 
-        for (int i = 0; i < keys.Count - 1; i++)
+        for (int i = 0; i < keys.Count; i++)
         {
-            if (keys[i].Time <= time && keys[i + 1].Time >= time)
+            if (keys[i].Time <= time)
             {
                 keyLeft = keys[i];
-                keyRight = keys[i + 1];
+            }
+            if (keys[i].Time >= time)
+            {
+                keyRight = keys[i];
                 break;
             }
         }
 
-        float blendTime = Mathf.InverseLerp(keyLeft.Time, keyRight.Time, time);
-        return Color.Lerp(keyLeft.Color, keyRight.Color, blendTime);
+        if (blendMode == BlendMode.Linear)
+        {
+            float blendTime = Mathf.InverseLerp(keyLeft.Time, keyRight.Time, time);
+            return Color.Lerp(keyLeft.Color, keyRight.Color, blendTime);
+        }
+
+        return keyRight.Color;
     }
 
     public void RemoveKey(int index)
