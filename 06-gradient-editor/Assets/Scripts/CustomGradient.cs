@@ -13,6 +13,8 @@ public class CustomGradient
 
     public BlendMode blendMode;
 
+    public bool randomizeColor;
+
     [SerializeField]
     List<ColorKey> keys = new List<ColorKey>();
 
