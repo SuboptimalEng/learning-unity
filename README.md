@@ -1,16 +1,28 @@
 # 📚 Learning Unity
 
-## 3D Platformer
+## Flappy Bird
 
-👉 [Coding in Flow's 3D Platformer Tutorial](https://www.youtube.com/watch?v=n0GQL5JgJcY) on YouTube.
+- [GMTK's Flappy Bird Tutorial](https://www.youtube.com/watch?v=XtQMytORBmM)
 
 ## Platformer
 
-👉 [Coding in Flow's Platformer Tutorial](https://www.youtube.com/watch?v=Ii-scMenaOQ) on YouTube.
+- [Coding in Flow's Platformer Tutorial](https://www.youtube.com/watch?v=Ii-scMenaOQ)
 
-## Flappy Bird
+## 3D Platformer
 
-👉 [GMTK's Flappy Bird Tutorial](https://www.youtube.com/watch?v=XtQMytORBmM) on YouTube.
+- [Coding in Flow's 3D Platformer Tutorial](https://www.youtube.com/watch?v=n0GQL5JgJcY)
+
+## Procedural Planets
+
+- [Sebastian Lague's Procedural Planet Generation Tutorial](https://www.youtube.com/watch?v=QN39W020LqU)
+
+## Procedural Terrain Generation
+
+- [Sebastian Lague's Procedural Terrain Generation Tutorial](https://www.youtube.com/watch?v=wbpMiKiSKm8)
+
+## Gradient Editor
+
+- [Sebastian Lague's Gradient Editor Tutorial](https://www.youtube.com/watch?v=8_ZAlEoAQiA)
 
 ## License
 
