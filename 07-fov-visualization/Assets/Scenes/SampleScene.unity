@@ -1575,7 +1575,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   visibleTargets: []
-  meshResolution: 1
+  meshResolution: 0.25
+  edgeResolveIterations: 4
+  edgeDistThreshold: 0.5
   viewMeshFilter: {fileID: 984973657}
 --- !u!114 &1660587235
 MonoBehaviour:
