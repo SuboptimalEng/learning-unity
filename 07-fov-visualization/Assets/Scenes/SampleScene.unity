@@ -1482,6 +1482,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30accacb70d8d463e8d97d34884d68c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  viewRadius: 4
+  viewAngle: 90
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 64
+  visibleTargets: []
 --- !u!114 &1660587235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,6 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83acd8dc37e440059f95234de57adde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 6
 --- !u!54 &1660587236
 Rigidbody:
   m_ObjectHideFlags: 0
