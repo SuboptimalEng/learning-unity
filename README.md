@@ -3,14 +3,19 @@
 ## Flappy Bird
 
 - [GMTK's Flappy Bird Tutorial](https://www.youtube.com/watch?v=XtQMytORBmM)
+- First real introduction to Unity.
+- Super helpful for understanding the basics of game dev.
+- Implemented extra functionality suggested in the video.
 
 ## Platformer
 
 - [Coding in Flow's Platformer Tutorial](https://www.youtube.com/watch?v=Ii-scMenaOQ)
+- Another project to learn the basics of 2D Unity game dev.
 
 ## 3D Platformer
 
 - [Coding in Flow's 3D Platformer Tutorial](https://www.youtube.com/watch?v=n0GQL5JgJcY)
+- First 3D project with Unity.
 
 ## Procedural Planets
 
@@ -24,6 +29,13 @@
 ## Gradient Editor
 
 - [Sebastian Lague's Gradient Editor Tutorial](https://www.youtube.com/watch?v=8_ZAlEoAQiA)
+
+## Field of View Visualization
+
+- [Sebastian Lague's FOV Visualization Tutorial](https://www.youtube.com/watch?v=rQG9aUWarwE)
+- Completed 2/3 tutorials in the series.
+- Ran into issues setting up the shader in the 3rd tutorial.
+  - I was using URP, but the tutorial used SRP.
 
 ## License
 
