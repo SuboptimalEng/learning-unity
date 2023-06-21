@@ -9,7 +9,7 @@ Shader "Custom/Stencil Object"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Opaque" "RenderPipeLine"="UniversalRenderPipeline"}
         LOD 200
 
         Stencil
