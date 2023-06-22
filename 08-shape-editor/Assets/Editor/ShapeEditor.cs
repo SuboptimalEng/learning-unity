@@ -8,7 +8,7 @@ public class ShapeEditor : Editor
 {
     ShapeCreator shapeCreator;
     SelectionInfo selectionInfo;
-    bool needsRepaint;
+    bool shapeChangedSinceLastRepaint;
 
     public override void OnInspectorGUI()
     {
@@ -54,7 +54,7 @@ public class ShapeEditor : Editor
 
         if (GUI.changed)
         {
-            needsRepaint = true;
+            shapeChangedSinceLastRepaint = true;
             SceneView.RepaintAll();
         }
     }
@@ -77,7 +77,7 @@ public class ShapeEditor : Editor
         else
         {
             HandleInput(guiEvent);
-            if (needsRepaint)
+            if (shapeChangedSinceLastRepaint)
             {
                 HandleUtility.Repaint();
             }
@@ -106,7 +106,7 @@ public class ShapeEditor : Editor
         SelectedShape.points.Insert(newPointIndex, position);
         selectionInfo.pointIndex = newPointIndex;
         selectionInfo.mouseOverShapeIndex = selectionInfo.selectedShapeIndex;
-        needsRepaint = true;
+        shapeChangedSinceLastRepaint = true;
 
         SelectPointUnderMouse();
     }
@@ -117,7 +117,7 @@ public class ShapeEditor : Editor
         SelectedShape.points.RemoveAt(selectionInfo.pointIndex);
         selectionInfo.pointIsSelected = false;
         selectionInfo.mouseIsOverPoint = false;
-        needsRepaint = true;
+        shapeChangedSinceLastRepaint = true;
     }
 
     void SelectPointUnderMouse()
@@ -128,7 +128,7 @@ public class ShapeEditor : Editor
         selectionInfo.lineIndex = -1;
 
         selectionInfo.positionAtStartOfDrag = SelectedShape.points[selectionInfo.pointIndex];
-        needsRepaint = true;
+        shapeChangedSinceLastRepaint = true;
     }
 
     void SelectShapeUnderMouse()
@@ -136,7 +136,7 @@ public class ShapeEditor : Editor
         if (selectionInfo.mouseOverShapeIndex != -1)
         {
             selectionInfo.selectedShapeIndex = selectionInfo.mouseOverShapeIndex;
-            needsRepaint = true;
+            shapeChangedSinceLastRepaint = true;
         }
     }
 
@@ -230,7 +230,7 @@ public class ShapeEditor : Editor
 
             selectionInfo.pointIsSelected = false;
             selectionInfo.pointIndex = -1;
-            needsRepaint = true;
+            shapeChangedSinceLastRepaint = true;
         }
     }
 
@@ -239,7 +239,7 @@ public class ShapeEditor : Editor
         if (selectionInfo.pointIsSelected)
         {
             SelectedShape.points[selectionInfo.pointIndex] = mousePosition;
-            needsRepaint = true;
+            shapeChangedSinceLastRepaint = true;
         }
     }
 
@@ -273,7 +273,7 @@ public class ShapeEditor : Editor
             selectionInfo.mouseOverShapeIndex = mouseOverShapeIndex;
             selectionInfo.mouseIsOverPoint = mouseOverPointIndex != -1;
 
-            needsRepaint = true;
+            shapeChangedSinceLastRepaint = true;
         }
 
         if (selectionInfo.mouseIsOverPoint)
@@ -317,7 +317,7 @@ public class ShapeEditor : Editor
                 selectionInfo.lineIndex = mouseOverLineIndex;
                 selectionInfo.mouseOverShapeIndex = mouseOverShapeIndex;
                 selectionInfo.mouseIsOverLine = mouseOverLineIndex != -1;
-                needsRepaint = true;
+                shapeChangedSinceLastRepaint = true;
             }
         }
     }
@@ -359,19 +359,27 @@ public class ShapeEditor : Editor
             }
         }
 
-        needsRepaint = false;
+        if (shapeChangedSinceLastRepaint)
+        {
+            shapeCreator.UpdateMeshDisplay();
+        }
+
+        shapeChangedSinceLastRepaint = false;
     }
 
     void OnEnable()
     {
+        shapeChangedSinceLastRepaint = true;
         shapeCreator = target as ShapeCreator;
         selectionInfo = new SelectionInfo();
         Undo.undoRedoPerformed += OnUndoOrRedo;
+        Tools.hidden = true;
     }
 
     void OnDisable()
     {
         Undo.undoRedoPerformed -= OnUndoOrRedo;
+        Tools.hidden = false;
     }
 
     // handle edge case when user Undo's a shape and then tries to add a node

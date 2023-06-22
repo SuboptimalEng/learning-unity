@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShapeCreator : MonoBehaviour
 {
+    public MeshRenderer meshRenderer;
+
     [HideInInspector]
     public List<Shape> shapes = new List<Shape>();
 
@@ -11,6 +13,8 @@ public class ShapeCreator : MonoBehaviour
     public bool showShapesList;
 
     public float handleRadius = 0.5f;
+
+    public void UpdateMeshDisplay() { }
 }
 
 [System.Serializable]
