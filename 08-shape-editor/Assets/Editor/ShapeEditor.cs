@@ -10,6 +10,55 @@ public class ShapeEditor : Editor
     SelectionInfo selectionInfo;
     bool needsRepaint;
 
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+
+        int shapeDeleteIndex = -1;
+        shapeCreator.showShapesList = EditorGUILayout.Foldout(
+            shapeCreator.showShapesList,
+            "Show Shapes List"
+        );
+        if (shapeCreator.showShapesList)
+        {
+            for (int i = 0; i < shapeCreator.shapes.Count; i++)
+            {
+                GUILayout.BeginHorizontal();
+                GUILayout.Label("Shape " + (i + 1));
+
+                GUI.enabled = i != selectionInfo.selectedShapeIndex;
+                if (GUILayout.Button("Select"))
+                {
+                    selectionInfo.selectedShapeIndex = i;
+                }
+                GUI.enabled = true;
+
+                if (GUILayout.Button("Delete"))
+                {
+                    shapeDeleteIndex = i;
+                }
+                GUILayout.EndHorizontal();
+            }
+        }
+
+        if (shapeDeleteIndex != -1)
+        {
+            Undo.RecordObject(shapeCreator, "Delete shape");
+            shapeCreator.shapes.RemoveAt(shapeDeleteIndex);
+            selectionInfo.selectedShapeIndex = Mathf.Clamp(
+                selectionInfo.selectedShapeIndex,
+                0,
+                shapeCreator.shapes.Count - 1
+            );
+        }
+
+        if (GUI.changed)
+        {
+            needsRepaint = true;
+            SceneView.RepaintAll();
+        }
+    }
+
     private void OnSceneGUI()
     {
         Event guiEvent = Event.current;
@@ -328,7 +377,10 @@ public class ShapeEditor : Editor
     // handle edge case when user Undo's a shape and then tries to add a node
     void OnUndoOrRedo()
     {
-        if (selectionInfo.selectedShapeIndex >= shapeCreator.shapes.Count)
+        if (
+            selectionInfo.selectedShapeIndex >= shapeCreator.shapes.Count
+            || selectionInfo.selectedShapeIndex == -1
+        )
         {
             selectionInfo.selectedShapeIndex = shapeCreator.shapes.Count - 1;
         }

@@ -7,6 +7,9 @@ public class ShapeCreator : MonoBehaviour
     [HideInInspector]
     public List<Shape> shapes = new List<Shape>();
 
+    [HideInInspector]
+    public bool showShapesList;
+
     public float handleRadius = 0.5f;
 }
 
