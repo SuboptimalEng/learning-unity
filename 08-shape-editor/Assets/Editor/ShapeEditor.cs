@@ -62,6 +62,15 @@ public class ShapeEditor : Editor
         SelectPointUnderMouse();
     }
 
+    void DeletePointUnderMouse()
+    {
+        Undo.RecordObject(shapeCreator, "Delete point");
+        SelectedShape.points.RemoveAt(selectionInfo.pointIndex);
+        selectionInfo.pointIsSelected = false;
+        selectionInfo.mouseIsOverPoint = false;
+        needsRepaint = true;
+    }
+
     void SelectPointUnderMouse()
     {
         selectionInfo.pointIsSelected = true;
@@ -131,8 +140,16 @@ public class ShapeEditor : Editor
 
     void HandleShiftLeftMouseDown(Vector3 mousePosition)
     {
-        CreateNewShape();
-        CreateNewPoint(mousePosition);
+        if (selectionInfo.mouseIsOverPoint)
+        {
+            SelectShapeUnderMouse();
+            DeletePointUnderMouse();
+        }
+        else
+        {
+            CreateNewShape();
+            CreateNewPoint(mousePosition);
+        }
     }
 
     void HandleLeftMouseDown(Vector3 mousePosition)
