@@ -68,6 +68,29 @@ public class Path
         }
     }
 
+    public void DeleteSegment(int anchorIndex)
+    {
+        if (NumSegments > 2 || !isClosed && NumPoints > 1)
+        {
+            if (anchorIndex == 0)
+            {
+                if (isClosed)
+                {
+                    points[points.Count - 1] = points[2];
+                }
+                points.RemoveRange(0, 3);
+            }
+            else if (anchorIndex == points.Count - 1 && !isClosed)
+            {
+                points.RemoveRange(anchorIndex - 2, 3);
+            }
+            else
+            {
+                points.RemoveRange(anchorIndex - 1, 3);
+            }
+        }
+    }
+
     public Vector2[] GetPointsInSegment(int i)
     {
         return new Vector2[]
