@@ -54,6 +54,34 @@ public class Path
 
     public void MovePoint(int i, Vector2 pos)
     {
+        Vector2 deltaMove = pos - points[i];
         points[i] = pos;
+
+        // moving anchor point if i % 3 == 0
+        // otherwise moving control point
+        if (i % 3 == 0)
+        {
+            if (i + 1 < points.Count)
+            {
+                points[i + 1] += deltaMove;
+            }
+            if (i - 1 >= 0)
+            {
+                points[i - 1] += deltaMove;
+            }
+        }
+        else
+        {
+            bool nextPointIsAnchor = (i + 1) % 3 == 0;
+            int correspondingControlIndex = (nextPointIsAnchor) ? i + 2 : i - 2;
+            int anchorIndex = (nextPointIsAnchor) ? i + 1 : i - 1;
+
+            if (correspondingControlIndex >= 0 && correspondingControlIndex < points.Count)
+            {
+                float dist = (points[anchorIndex] - points[correspondingControlIndex]).magnitude;
+                Vector2 dir = (points[anchorIndex] - pos).normalized;
+                points[correspondingControlIndex] = points[anchorIndex] + dir * dist;
+            }
+        }
     }
 }
