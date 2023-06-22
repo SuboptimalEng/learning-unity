@@ -37,6 +37,10 @@
 - Ran into issues setting up the shader in the 3rd tutorial.
   - I was using URP, but the tutorial used SRP.
 
+## Shape Editor
+
+- [Sebastian Lague's Shape Editor Tutorial](https://www.youtube.com/watch?v=bPO7_JNWNmI)
+
 ## License
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
