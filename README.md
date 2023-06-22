@@ -41,6 +41,10 @@
 
 - [Sebastian Lague's Shape Editor Tutorial](https://www.youtube.com/watch?v=bPO7_JNWNmI)
 
+## Curve Editor
+
+- [Sebastian Lague's 2D Curve Editor Tutorial](https://www.youtube.com/watch?v=RF04Fi9OCPc)
+
 ## License
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
