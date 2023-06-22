@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using Sebastian.Geometry;
 
 [CustomEditor(typeof(ShapeCreator))]
 public class ShapeEditor : Editor
@@ -13,6 +14,9 @@ public class ShapeEditor : Editor
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
+        string helpMessage =
+            "Left click to add points.\nShift-left click on point to delete.\nShift-left click on empty space to create new shape.";
+        EditorGUILayout.HelpBox(helpMessage, MessageType.Info);
 
         int shapeDeleteIndex = -1;
         shapeCreator.showShapesList = EditorGUILayout.Foldout(
@@ -392,6 +396,7 @@ public class ShapeEditor : Editor
         {
             selectionInfo.selectedShapeIndex = shapeCreator.shapes.Count - 1;
         }
+        shapeChangedSinceLastRepaint = true;
     }
 
     Shape SelectedShape
