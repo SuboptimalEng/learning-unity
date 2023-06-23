@@ -13,8 +13,8 @@ model of what to Google when I'm stuck.
 
 ### Quick Tip
 
-It is important to choose a tutorial that goes at a pace that matches your
-current knowledge level. Choosing a tutorial that is too difficult is like
+It is important to `choose a tutorial that goes at a pace that matches your
+current knowledge level`. Choosing a tutorial that is too difficult is like
 training for a marathon by running 20 miles on the first day. You won't
 get far and will be demotivated very quickly.
 
