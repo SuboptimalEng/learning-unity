@@ -2,26 +2,31 @@
 
 ### Description
 
-This repo contains the code for the tutorials I followed to learn the basics of
-Unity. On average, I spent 6-10 hours on each tutorial series.
+This repo contains the code for the tutorials I followed to learn the
+basics of Unity. On average, I spent 6-10 hours on each tutorial series.
 
 ### Learning Approach
 
-Complete many tutorials as quickly as possible to turn `unknown unknowns` into
-`known unknowns`. This, in theory, should help me build a mental model of what to
-Google when I'm stuck.
+Complete many tutorials as quickly as possible to turn `unknown unknowns`
+into `known unknowns`. This, in theory, should help me build a mental
+model of what to Google when I'm stuck.
 
 ### Quick Tip
 
-I quickly realized that it is important to judge the complexity of a tutorial
-series before jumping straight into one. Choosing a tutorial that is too
-difficult is like running a marathon on the first day. You won't get far
-and will be demotivated very quickly. Choose tutorials that meet your level
-of knowledge at the time of doing them.
+It is important to choose a tutorial that goes at a pace that matches your
+current knowledge level. Choosing a tutorial that is too difficult is like
+training for a marathon by running 20 miles on the first day. You won't
+get far and will be demotivated very quickly.
 
-For example, it took me 3-4 days to complete 14/21 tutorials in Sebastian
-Lague's Procedural Terrain Generation series. If I could go back in time,
-I'd probably have done this as my 9th or 10th tutorial, instead of my 5th one.
+I learned this lesson when I started Sebastian Lague's Procedural Terrain
+Generation series. It took my 3-4 days to complete 14/21 tutorials. This
+was a slow pace for me and I was started to get frustrated with my lack
+of quick progress.
+
+After taking a step back to think about my pacing, I realized I was trying
+to learn too much too quickly. If I could go back in time, I would've done
+this as my 9th or 10th tutorial (once I felt more comfortable with Unity)
+instead of doing it as my 5th one.
 
 ## Flappy Bird
 
@@ -57,6 +62,7 @@ I'd probably have done this as my 9th or 10th tutorial, instead of my 5th one.
 
 - [Sebastian Lague's Procedural Terrain Generation Tutorial](https://www.youtube.com/watch?v=wbpMiKiSKm8)
 - Completed 14/21 tutorials in the series.
+- Really good tutorial series, but is a pretty advanced.
 - Difficulty: Hard
 
 ## Gradient Editor
