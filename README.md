@@ -1,22 +1,49 @@
 # 📚 Learning Unity
 
+#### Description
+
+This repo contains the code for the tutorials I followed to learn the basics of
+Unity. On average, I spent 6-10 hours on each tutorial series.
+
+#### Learning Approach
+
+Complete many tutorials as quickly as possible to turn `unknown unknowns` into
+`known unknowns`. This, in theory, should help me build a mental model of what to
+Google when I'm stuck.
+
+#### Quick Tip
+
+I quickly realized that it is important to judge the complexity of a tutorial
+series before jumping straight into one. Choosing a tutorial that is too
+difficult is like running a marathon on the first day. You won't get far
+and will be demotivated very quickly. Choose tutorials that meet your level
+of knowledge at the time of doing them.
+
+For example, it took me 3-4 days to complete 14/21 tutorials in Sebastian
+Lague's Procedural Terrain Generation series. If I could go back in time,
+I'd probably have done this as my 9th or 10th tutorial, instead of my 5th one.
+
 ## Flappy Bird
 
 - [GMTK's Flappy Bird Tutorial](https://www.youtube.com/watch?v=XtQMytORBmM)
 - First real introduction to Unity.
 - Teaching style was very intuitive and helped me understand the basics.
 - Implemented extra functionality suggested in the video.
+- Difficulty: Very Easy
 
 ## Platformer
 
 - [Coding in Flow's Platformer Tutorial](https://www.youtube.com/watch?v=Ii-scMenaOQ)
 - Another project to learn the basics of 2D Unity game dev.
 - Helped me relearn some of the concepts from GMTK's tutorial.
+- Also learned about Unity specific keyboard shortcuts like `QWERT`.
+- Difficulty: Very Easy
 
 ## 3D Platformer
 
 - [Coding in Flow's 3D Platformer Tutorial](https://www.youtube.com/watch?v=n0GQL5JgJcY)
 - First 3D project with Unity, tutorial is pretty straight-forward.
+- Difficulty: Very Easy
 
 ## Procedural Planets
 
@@ -24,16 +51,19 @@
 - Perhaps I was a bit too ambitious with this one.
 - Really good tutorial series, but is a pretty advanced.
 - Ran into some bugs as I tried to set up the planet shader.
+- Difficulty: Medium-Hard
 
 ## Procedural Terrain Generation
 
 - [Sebastian Lague's Procedural Terrain Generation Tutorial](https://www.youtube.com/watch?v=wbpMiKiSKm8)
 - Completed 14/21 tutorials in the series.
+- Difficulty: Hard
 
 ## Gradient Editor
 
 - [Sebastian Lague's Gradient Editor Tutorial](https://www.youtube.com/watch?v=8_ZAlEoAQiA)
 - Started getting into building editor tools after this one.
+- Difficulty: Easy-Medium
 
 ## Field of View Visualization
 
@@ -41,14 +71,17 @@
 - Completed 2/3 tutorials in the series.
 - Ran into issues setting up the shader in the 3rd tutorial.
   - I was using URP, but the tutorial used SRP.
+- Difficulty: Easy-Medium
 
 ## Shape Editor
 
 - [Sebastian Lague's Shape Editor Tutorial](https://www.youtube.com/watch?v=bPO7_JNWNmI)
+- Difficulty: Easy-Medium
 
 ## Curve Editor
 
 - [Sebastian Lague's 2D Curve Editor Tutorial](https://www.youtube.com/watch?v=RF04Fi9OCPc)
+- Difficulty: Medium
 
   <img src="/_demos/09-curve-editor-01.png">
 
