@@ -35,6 +35,7 @@ instead of doing it as my 5th one.
 - Teaching style was very intuitive and helped me understand the basics.
 - Implemented extra functionality suggested in the video.
 - Difficulty: Very Easy
+  <img src="/_demos/01-flappy-bird-01.png">
 
 ## Platformer
 
@@ -43,12 +44,14 @@ instead of doing it as my 5th one.
 - Helped me relearn some of the concepts from GMTK's tutorial.
 - Also learned about Unity specific keyboard shortcuts like `QWERT`.
 - Difficulty: Very Easy
+  <img src="/_demos/02-platformer-01.png">
 
 ## 3D Platformer
 
 - [Coding in Flow's 3D Platformer Tutorial](https://www.youtube.com/watch?v=n0GQL5JgJcY)
 - First 3D project with Unity, tutorial is pretty straight-forward.
 - Difficulty: Very Easy
+  <img src="/_demos/03-platformer-3d-01.png">
 
 ## Procedural Planets
 
@@ -57,6 +60,7 @@ instead of doing it as my 5th one.
 - Really good tutorial series, but is a pretty advanced.
 - Ran into some bugs as I tried to set up the planet shader.
 - Difficulty: Medium-Hard
+  <img src="/_demos/04-procedural-planets-01.png">
 
 ## Procedural Terrain Generation
 
@@ -88,7 +92,6 @@ instead of doing it as my 5th one.
 
 - [Sebastian Lague's 2D Curve Editor Tutorial](https://www.youtube.com/watch?v=RF04Fi9OCPc)
 - Difficulty: Medium
-
   <img src="/_demos/09-curve-editor-01.png">
 
 ## License
