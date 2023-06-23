@@ -79,7 +79,7 @@ instead of doing it as my 5th one.
 
 - [Sebastian Lague's Gradient Editor Tutorial](https://www.youtube.com/watch?v=8_ZAlEoAQiA)
 - Started getting into building editor tools after this one.
-- Difficulty: Easy-Medium
+- Difficulty: Easy
 
 <img src="/_demos/06-gradient-editor-01.png">
 
