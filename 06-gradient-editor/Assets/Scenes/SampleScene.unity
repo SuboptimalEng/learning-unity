@@ -391,6 +391,14 @@ MonoBehaviour:
     keys:
     - color: {r: 1, g: 1, b: 1, a: 1}
       time: 0
+    - color: {r: 1, g: 0, b: 0, a: 1}
+      time: 0.22386363
+    - color: {r: 0.13947599, g: 0.6039216, b: 0.082352936, a: 1}
+      time: 0.5022727
+    - color: {r: 0, g: 0.056235075, b: 1, a: 1}
+      time: 0.78409094
+    - color: {r: 0, g: 0, b: 0, a: 1}
+      time: 1
     - color: {r: 0, g: 0, b: 0, a: 1}
       time: 1
   otherGradient:

@@ -73,11 +73,15 @@ instead of doing it as my 5th one.
 - Really good tutorial series, but is a pretty advanced.
 - Difficulty: Hard
 
+<img src="/_demos/05-procedural-terrain-01.png">
+
 ## Gradient Editor
 
 - [Sebastian Lague's Gradient Editor Tutorial](https://www.youtube.com/watch?v=8_ZAlEoAQiA)
 - Started getting into building editor tools after this one.
 - Difficulty: Easy-Medium
+
+<img src="/_demos/06-gradient-editor-01.png">
 
 ## Field of View Visualization
 
@@ -87,10 +91,14 @@ instead of doing it as my 5th one.
   - I was using URP, but the tutorial used SRP.
 - Difficulty: Easy-Medium
 
+<img src="/_demos/07-fov-visualization-01.png">
+
 ## Shape Editor
 
 - [Sebastian Lague's Shape Editor Tutorial](https://www.youtube.com/watch?v=bPO7_JNWNmI)
 - Difficulty: Easy-Medium
+
+<img src="/_demos/08-shape-editor-01.png">
 
 ## Curve Editor
 
