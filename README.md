@@ -96,8 +96,7 @@ instead of doing it as my 5th one.
 
 - [Sebastian Lague's 2D Curve Editor Tutorial](https://www.youtube.com/watch?v=RF04Fi9OCPc)
 - Difficulty: Medium
-
-  <img src="/_demos/09-curve-editor-01.png">
+- <img src="/_demos/09-curve-editor-01.png">
 
 ## License
 
