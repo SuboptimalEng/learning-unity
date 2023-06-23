@@ -1,17 +1,17 @@
 # 📚 Learning Unity
 
-#### Description
+### Description
 
 This repo contains the code for the tutorials I followed to learn the basics of
 Unity. On average, I spent 6-10 hours on each tutorial series.
 
-#### Learning Approach
+### Learning Approach
 
 Complete many tutorials as quickly as possible to turn `unknown unknowns` into
 `known unknowns`. This, in theory, should help me build a mental model of what to
 Google when I'm stuck.
 
-#### Quick Tip
+### Quick Tip
 
 I quickly realized that it is important to judge the complexity of a tutorial
 series before jumping straight into one. Choosing a tutorial that is too
