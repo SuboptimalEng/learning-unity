@@ -4,22 +4,26 @@
 
 - [GMTK's Flappy Bird Tutorial](https://www.youtube.com/watch?v=XtQMytORBmM)
 - First real introduction to Unity.
-- Super helpful for understanding the basics of game dev.
+- Teaching style was very intuitive and helped me understand the basics.
 - Implemented extra functionality suggested in the video.
 
 ## Platformer
 
 - [Coding in Flow's Platformer Tutorial](https://www.youtube.com/watch?v=Ii-scMenaOQ)
 - Another project to learn the basics of 2D Unity game dev.
+- Helped me relearn some of the concepts from GMTK's tutorial.
 
 ## 3D Platformer
 
 - [Coding in Flow's 3D Platformer Tutorial](https://www.youtube.com/watch?v=n0GQL5JgJcY)
-- First 3D project with Unity.
+- First 3D project with Unity, tutorial is pretty straight-forward.
 
 ## Procedural Planets
 
 - [Sebastian Lague's Procedural Planet Generation Tutorial](https://www.youtube.com/watch?v=QN39W020LqU)
+- Perhaps I was a bit too ambitious with this one.
+- Really good tutorial series, but is a pretty advanced.
+- Ran into some bugs as I tried to set up the planet shader.
 
 ## Procedural Terrain Generation
 
@@ -29,6 +33,7 @@
 ## Gradient Editor
 
 - [Sebastian Lague's Gradient Editor Tutorial](https://www.youtube.com/watch?v=8_ZAlEoAQiA)
+- Started getting into building editor tools after this one.
 
 ## Field of View Visualization
 
