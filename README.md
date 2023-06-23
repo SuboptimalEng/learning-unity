@@ -36,7 +36,7 @@ instead of doing it as my 5th one.
 - Implemented extra functionality suggested in the video.
 - Difficulty: Easy
 
-  <img src="/_demos/01-flappy-bird-01.png">
+<img src="/_demos/01-flappy-bird-01.png">
 
 ## Platformer
 
@@ -46,7 +46,7 @@ instead of doing it as my 5th one.
 - Also learned about Unity specific keyboard shortcuts like `QWERT`.
 - Difficulty: Easy
 
-  <img src="/_demos/02-platformer-01.png">
+<img src="/_demos/02-platformer-01.png">
 
 ## 3D Platformer
 
@@ -54,7 +54,7 @@ instead of doing it as my 5th one.
 - First 3D project with Unity, tutorial is pretty straight-forward.
 - Difficulty: Easy
 
-  <img src="/_demos/03-platformer-3d-01.png">
+<img src="/_demos/03-platformer-3d-01.png">
 
 ## Procedural Planets
 
@@ -64,7 +64,7 @@ instead of doing it as my 5th one.
 - Ran into some bugs as I tried to set up the planet shader.
 - Difficulty: Medium-Hard
 
-  <img src="/_demos/04-procedural-planets-01.png">
+<img src="/_demos/04-procedural-planets-01.png">
 
 ## Procedural Terrain Generation
 
