@@ -277,8 +277,8 @@ MonoBehaviour:
   muzzle: {fileID: 7021207050545101033}
   projectile: {fileID: 6289952355954330613, guid: 17f9c60357fa14273bfb132879281272,
     type: 3}
-  msBetweenShots: 16
-  muzzleVelocity: 4
+  msBetweenShots: 400
+  muzzleVelocity: 10
 --- !u!1 &3725207609553686235
 GameObject:
   m_ObjectHideFlags: 0
