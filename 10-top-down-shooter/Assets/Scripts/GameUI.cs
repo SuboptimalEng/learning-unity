@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
@@ -30,5 +31,12 @@ public class GameUI : MonoBehaviour
             fadePlane.color = Color.Lerp(from, to, percent);
             yield return null;
         }
+    }
+
+    // ui input
+    public void StartNewGame()
+    {
+        // Application.LoadLevel("SampleScene");
+        SceneManager.LoadScene("SampleScene");
     }
 }
