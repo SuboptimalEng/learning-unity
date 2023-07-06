@@ -6,7 +6,11 @@ public class MapGenerator : MonoBehaviour
 {
     public Transform tilePrefab;
     public Transform obstaclePrefab;
+    public Transform navmeshFloor;
     public Vector2 mapSize;
+    public Vector2 maxMapSize;
+
+    public float tileSize;
 
     [Range(0, 1)]
     public float outlinePercent;
@@ -58,7 +62,7 @@ public class MapGenerator : MonoBehaviour
                     tilePosition,
                     Quaternion.Euler(Vector3.right * 90)
                 );
-                newTile.localScale = Vector3.one * (1 - outlinePercent);
+                newTile.localScale = Vector3.one * (1 - outlinePercent) * tileSize;
                 newTile.parent = mapHolder;
             }
         }
@@ -84,6 +88,7 @@ public class MapGenerator : MonoBehaviour
                         Quaternion.identity
                     ) as Transform;
                 newObstacle.parent = mapHolder;
+                newObstacle.localScale = Vector3.one * (1 - outlinePercent) * tileSize;
             }
             else
             {
@@ -91,6 +96,8 @@ public class MapGenerator : MonoBehaviour
                 currentObstacleCount--;
             }
         }
+
+        navmeshFloor.localScale = new Vector3(maxMapSize.x, maxMapSize.y) * tileSize;
     }
 
     bool MapIsFullyAccessible(bool[,] obstacleMap, int currentObstacleCount)
@@ -148,7 +155,7 @@ public class MapGenerator : MonoBehaviour
 
     Vector3 CoordToPosition(int x, int y)
     {
-        return new Vector3(-mapSize.x / 2 + 0.5f + x, 0, -mapSize.y / 2 + 0.5f + y);
+        return new Vector3(-mapSize.x / 2 + 0.5f + x, 0, -mapSize.y / 2 + 0.5f + y) * tileSize;
     }
 
     public Coord GetRandomCoord()
