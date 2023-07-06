@@ -30,7 +30,9 @@ public class MapGenerator : MonoBehaviour
     public void GenerateMap()
     {
         currentMap = maps[mapIndex];
+        System.Random prng = new System.Random(currentMap.seed);
 
+        // generating coords
         allTileCoords = new List<Coord>();
         for (int x = 0; x < currentMap.mapSize.x; x++)
         {
@@ -43,6 +45,7 @@ public class MapGenerator : MonoBehaviour
             Utility.ShuffleArray(allTileCoords.ToArray(), currentMap.seed)
         );
 
+        // create map holder object
         string holderName = "Generated Map";
         if (transform.Find(holderName))
         {
@@ -52,6 +55,7 @@ public class MapGenerator : MonoBehaviour
         Transform mapHolder = new GameObject(holderName).transform;
         mapHolder.parent = transform;
 
+        // spawning tiles
         for (int x = 0; x < currentMap.mapSize.x; x++)
         {
             for (int y = 0; y < currentMap.mapSize.y; y++)
@@ -67,6 +71,7 @@ public class MapGenerator : MonoBehaviour
             }
         }
 
+        // spawning obstacles
         bool[,] obstacleMap = new bool[(int)currentMap.mapSize.x, (int)currentMap.mapSize.y];
 
         int obstacleCount = (int)(
@@ -85,15 +90,24 @@ public class MapGenerator : MonoBehaviour
                 && MapIsFullyAccessible(obstacleMap, currentObstacleCount)
             )
             {
+                float obstacleHeight = Mathf.Lerp(
+                    currentMap.minObstacleHeight,
+                    currentMap.maxObstacleHeight,
+                    (float)prng.NextDouble()
+                );
                 Vector3 obstaclePosition = CoordToPosition(randomCoord.x, randomCoord.y);
                 Transform newObstacle =
                     Instantiate(
                         obstaclePrefab,
-                        obstaclePosition + Vector3.up * 0.5f,
+                        obstaclePosition + Vector3.up * obstacleHeight / 2,
                         Quaternion.identity
                     ) as Transform;
                 newObstacle.parent = mapHolder;
-                newObstacle.localScale = Vector3.one * (1 - outlinePercent) * tileSize;
+                newObstacle.localScale = new Vector3(
+                    (1 - outlinePercent) * tileSize,
+                    obstacleHeight,
+                    (1 - outlinePercent) * tileSize
+                );
             }
             else
             {
@@ -102,6 +116,7 @@ public class MapGenerator : MonoBehaviour
             }
         }
 
+        // creating the navmesh mask
         Transform maskLeft =
             Instantiate(
                 navmeshMaskPrefab,
