@@ -31,6 +31,11 @@ public class MapGenerator : MonoBehaviour
     {
         currentMap = maps[mapIndex];
         System.Random prng = new System.Random(currentMap.seed);
+        GetComponent<BoxCollider>().size = new Vector3(
+            currentMap.mapSize.x * tileSize,
+            0.05f,
+            currentMap.mapSize.y * tileSize
+        );
 
         // generating coords
         allTileCoords = new List<Coord>();
