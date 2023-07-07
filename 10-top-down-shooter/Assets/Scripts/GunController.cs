@@ -46,4 +46,12 @@ public class GunController : MonoBehaviour
     {
         get { return weaponHold.position.y; }
     }
+
+    public void Reload()
+    {
+        if (equippedGun != null)
+        {
+            equippedGun.Reload();
+        }
+    }
 }
