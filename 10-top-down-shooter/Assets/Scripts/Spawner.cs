@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public bool devMode;
+
     public Wave[] waves;
     public Enemy enemy;
 
@@ -60,7 +62,20 @@ public class Spawner : MonoBehaviour
                 enemiesRemainingToSpawn--;
                 nextSpawnTime = Time.time + currentWave.timeBetweenSpawns;
 
-                StartCoroutine(SpawnEnemy());
+                StartCoroutine("SpawnEnemy");
+            }
+        }
+
+        if (devMode)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                StopCoroutine("SpawnEnemy");
+                foreach (var enemy in FindObjectsOfType<Enemy>())
+                {
+                    GameObject.Destroy(enemy.gameObject);
+                }
+                NextWave();
             }
         }
     }
