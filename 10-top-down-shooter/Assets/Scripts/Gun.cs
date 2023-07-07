@@ -19,6 +19,13 @@ public class Gun : MonoBehaviour
     public float muzzleVelocity = 35;
     public int burstCount;
 
+    [Header("Recoil")]
+    public Vector2 kickMinMax = new Vector2(0.05f, 0.2f);
+    public Vector2 recoilAngleMinMax = new Vector2(5, 10);
+    public float recoilMoveSettleTime = 0.1f;
+    public float recoilRotSettleTime = 0.1f;
+
+    [Header("Effects")]
     public Transform shell;
     public Transform shellEjection;
     MuzzleFlash muzzleFlash;
@@ -45,11 +52,16 @@ public class Gun : MonoBehaviour
             transform.localPosition,
             Vector3.zero,
             ref recoilSmoothDampVelocity,
-            0.1f
+            recoilMoveSettleTime
         );
 
         // animate recoil rotation
-        recoilAngle = Mathf.SmoothDamp(recoilAngle, 0, ref recoilRotSmoothDampVelocity, 0.1f);
+        recoilAngle = Mathf.SmoothDamp(
+            recoilAngle,
+            0,
+            ref recoilRotSmoothDampVelocity,
+            recoilRotSettleTime
+        );
         transform.localEulerAngles = Vector3.left * recoilAngle;
     }
 
@@ -81,8 +93,8 @@ public class Gun : MonoBehaviour
             Instantiate(shell, shellEjection.position, shellEjection.rotation);
             muzzleFlash.Activate();
 
-            transform.localPosition -= Vector3.forward * .2f;
-            recoilAngle += 10;
+            transform.localPosition -= Vector3.forward * Random.Range(kickMinMax.x, kickMinMax.y);
+            recoilAngle += Random.Range(recoilAngleMinMax.x, recoilAngleMinMax.y);
             recoilAngle = Mathf.Clamp(recoilAngle, 0, 30);
         }
     }

@@ -8611,7 +8611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786621414}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 3, z: 0}
+  m_LocalPosition: {x: -0, y: 2, z: 0}
   m_LocalScale: {x: 0.3906085, y: 0.3906085, z: 0.3906085}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22239,7 +22239,7 @@ MonoBehaviour:
   devMode: 1
   waves:
   - infinite: 0
-    enemyCount: 1
+    enemyCount: 0
     timeBetweenSpawns: 2
     moveSpeed: 1
     hitsToKillPlayer: 6
