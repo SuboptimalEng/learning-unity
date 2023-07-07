@@ -22239,28 +22239,28 @@ MonoBehaviour:
   devMode: 1
   waves:
   - infinite: 0
-    enemyCount: 0
+    enemyCount: 2
     timeBetweenSpawns: 2
     moveSpeed: 1
     hitsToKillPlayer: 6
     enemyHealth: 2
     skinColor: {r: 0.56462735, g: 1, b: 0.48584908, a: 0}
   - infinite: 0
-    enemyCount: 1
+    enemyCount: 2
     timeBetweenSpawns: 0.75
     moveSpeed: 1.25
     hitsToKillPlayer: 5
     enemyHealth: 3
     skinColor: {r: 0.9542934, g: 1, b: 0.4009434, a: 0}
   - infinite: 0
-    enemyCount: 1
+    enemyCount: 2
     timeBetweenSpawns: 0.75
     moveSpeed: 1.5
     hitsToKillPlayer: 4
     enemyHealth: 4
     skinColor: {r: 0, g: 0, b: 0, a: 0}
   - infinite: 0
-    enemyCount: 1
+    enemyCount: 2
     timeBetweenSpawns: 0.75
     moveSpeed: 1.75
     hitsToKillPlayer: 3
