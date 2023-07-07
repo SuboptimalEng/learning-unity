@@ -28,10 +28,29 @@ public class Gun : MonoBehaviour
     bool triggerReleasedSinceLastShot;
     int shotsRemainingInBurst;
 
+    Vector3 recoilSmoothDampVelocity;
+    float recoilRotSmoothDampVelocity;
+    float recoilAngle;
+
     void Start()
     {
         muzzleFlash = GetComponent<MuzzleFlash>();
         shotsRemainingInBurst = burstCount;
+    }
+
+    void Update()
+    {
+        // animate recoil kickback
+        transform.localPosition = Vector3.SmoothDamp(
+            transform.localPosition,
+            Vector3.zero,
+            ref recoilSmoothDampVelocity,
+            0.1f
+        );
+
+        // animate recoil rotation
+        recoilAngle = Mathf.SmoothDamp(recoilAngle, 0, ref recoilRotSmoothDampVelocity, 0.1f);
+        transform.localEulerAngles = Vector3.left * recoilAngle;
     }
 
     void Shoot()
@@ -61,6 +80,10 @@ public class Gun : MonoBehaviour
 
             Instantiate(shell, shellEjection.position, shellEjection.rotation);
             muzzleFlash.Activate();
+
+            transform.localPosition -= Vector3.forward * .2f;
+            recoilAngle += 10;
+            recoilAngle = Mathf.Clamp(recoilAngle, 0, 30);
         }
     }
 
