@@ -9,7 +9,7 @@ public class Player : LivingEntity
 {
     public float moveSpeed = 5;
 
-    public Transform crosshairs;
+    public Crosshairs crosshairs;
 
     Camera viewCamera;
     PlayerController controller;
@@ -45,7 +45,12 @@ public class Player : LivingEntity
             Vector3 pointOfIntersection = ray.GetPoint(rayDistance);
             // Debug.DrawLine(ray.origin, pointOfIntersection, Color.red);
             controller.LookAt(pointOfIntersection);
-            crosshairs.position = pointOfIntersection;
+            crosshairs.transform.position = new Vector3(
+                pointOfIntersection.x,
+                3f,
+                pointOfIntersection.z
+            );
+            crosshairs.DetectTargets(ray);
         }
 
         // weapon input
