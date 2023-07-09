@@ -63,7 +63,7 @@ public class GameUI : MonoBehaviour
                 }
             }
 
-            newWaveBanner.anchoredPosition = Vector2.up * Mathf.Lerp(-270, -50, animatePercent);
+            newWaveBanner.anchoredPosition = Vector2.up * Mathf.Lerp(-400, -50, animatePercent);
             yield return null;
         }
     }
