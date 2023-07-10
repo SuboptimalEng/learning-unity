@@ -107,13 +107,6 @@ instead of doing it as my 5th one.
 
 <img src="/_demos/09-curve-editor-01.png" style="margin-top: 12px;" >
 
-## Top Down Shooter
-
-- [Sebastian Lague's Top Down Shooter Tutorial](https://www.youtube.com/watch?v=SviIeTt2_Lc)
-- Difficulty: Medium
-
-<img src="/_demos/10-top-down-shooter-01.png" style="margin-top: 12px;" >
-
 ## License
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
