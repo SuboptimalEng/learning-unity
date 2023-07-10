@@ -1,3 +1,1 @@
-*.cs diff=csharp text
-*.cginc text
-*.shaders text
+*.shader linguist-vendored=true
