@@ -4198,6 +4198,7 @@ MonoBehaviour:
   - {fileID: 1302458293}
   - {fileID: 1437595048}
   - {fileID: 1536786977}
+  fullscreenToggle: {fileID: 877996874}
   screenWidths: c00300000005000080070000
 --- !u!4 &1936504023
 Transform:
