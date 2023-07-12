@@ -19,7 +19,7 @@ MonoBehaviour:
     noiseSettings:
       filterType: 0
       simpleNoiseSettings:
-        numOfLayers: 5
+        numOfLayers: 6
         strength: -0.18
         baseRoughness: 0.82
         roughness: 2
@@ -71,7 +71,7 @@ MonoBehaviour:
       ridgedNoiseSettings:
         numOfLayers: 3
         strength: 0.5
-        baseRoughness: 1.72
+        baseRoughness: 2.5
         roughness: 2.75
         persistence: 0.83
         center: {x: 0, y: 0, z: 0}

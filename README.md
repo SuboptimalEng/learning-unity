@@ -110,7 +110,7 @@ instead of doing it as my 5th one.
 ## Top Down Shooter
 
 - [Sebastian Lague's Top Down Shooter Tutorial](https://www.youtube.com/watch?v=SviIeTt2_Lc)
-- Difficulty: Medium
+- Difficulty: Easy-Medium
 
 <img src="/_demos/10-top-down-shooter-01.png" style="margin-top: 12px;" >
 
