@@ -83,7 +83,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ElevationMinMax: {r: -0.3298431, g: 0.1321462, b: 0, a: 0}
+    - _ElevationMinMax: {r: -0.31678435, g: 0.14778125, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _elevationMinMax: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

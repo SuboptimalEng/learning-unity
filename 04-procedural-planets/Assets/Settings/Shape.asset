@@ -71,7 +71,7 @@ MonoBehaviour:
       ridgedNoiseSettings:
         numOfLayers: 3
         strength: 0.5
-        baseRoughness: 2.5
+        baseRoughness: 3.95
         roughness: 2.75
         persistence: 0.83
         center: {x: 0, y: 0, z: 0}
