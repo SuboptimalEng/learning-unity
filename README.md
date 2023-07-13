@@ -1,7 +1,32 @@
 # 📚 Learning Unity
 
+### Description
+
 This repo contains the code for the 10 tutorials I followed to learn the
 basics of Unity. On average, I spent 1-3 days making each game.
+
+### Learning Approach
+
+Complete many tutorials as quickly as possible to turn `unknown unknowns`
+into `known unknowns`. This, in theory, should help me build a mental
+model of what to Google when I'm stuck.
+
+### Quick Tip
+
+It is important to `choose a tutorial that goes at a pace that matches your
+current knowledge level`. Choosing a tutorial that is too difficult is like
+training for a marathon by running 20 miles on the first day. You won't
+get far and will be demotivated very quickly.
+
+I learned this lesson when I started Sebastian Lague's Procedural Terrain
+Generation series. It took my 3-4 days to complete 14/21 tutorials. This
+was a slow pace for me and I was started to get frustrated with my lack
+of quick progress.
+
+After taking a step back to think about my pacing, I realized I was trying
+to learn too much too quickly. If I could go back in time, I would've done
+this as my 9th or 10th tutorial (once I felt more comfortable with Unity)
+instead of doing it as my 5th one.
 
 ## Flappy Bird
 
