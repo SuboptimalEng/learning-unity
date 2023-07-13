@@ -20,7 +20,7 @@ get far and will be demotivated very quickly.
 
 I learned this lesson when I started Sebastian Lague's Procedural Terrain
 Generation series. It took my 3-4 days to complete 14/21 tutorials. This
-was a slow pace for me and I was started to get frustrated with my lack
+was a slow pace for me and I was starting to get frustrated with my lack
 of quick progress.
 
 After taking a step back to think about my pacing, I realized I was trying
