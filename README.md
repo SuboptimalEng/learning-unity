@@ -1,7 +1,5 @@
 # 📚 Learning Unity
 
-### Description
-
 This repo contains the code for the 10 tutorials I followed to learn the
 basics of Unity. On average, I spent 1-3 days on each tutorial series.
 
