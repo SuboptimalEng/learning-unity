@@ -5,12 +5,6 @@
 This repo contains the code for the 10 tutorials I followed to learn the
 basics of Unity. On average, I spent 1-3 days making each game.
 
-### Learning Approach
-
-Complete many tutorials as quickly as possible to turn `unknown unknowns`
-into `known unknowns`. This, in theory, should help me build a mental
-model of what to Google when I'm stuck.
-
 ### Quick Tip
 
 It is important to `choose a tutorial that goes at a pace that matches your
