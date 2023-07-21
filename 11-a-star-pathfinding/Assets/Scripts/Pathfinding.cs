@@ -28,20 +28,10 @@ public class Pathfinding : MonoBehaviour
         HashSet<Node> closedSet = new HashSet<Node>();
         openSet.Add(startNode);
 
-        int count = 0;
-
         while (true)
         {
             if (openSet.Count == 0)
             {
-                break;
-            }
-
-            count++;
-
-            if (count == 10000)
-            {
-                Debug.Log("count: " + count);
                 break;
             }
 
