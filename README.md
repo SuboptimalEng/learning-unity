@@ -107,6 +107,11 @@ instead of doing it as my 5th one.
 
 <img src="/_demos/10-top-down-shooter-01.png" style="margin-top: 12px;" >
 
+## A\* Pathfinding
+
+- [Sebastian Lague's A\* Pathfinding Tutorial](https://www.youtube.com/watch?v=-L-WgKMFuhE)
+- Difficulty: -
+
 ## License
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
