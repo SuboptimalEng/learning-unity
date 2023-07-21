@@ -111,7 +111,7 @@ instead of doing it as my 5th one.
 
 - [Sebastian Lague's A\* Pathfinding Tutorial](https://www.youtube.com/watch?v=-L-WgKMFuhE)
 - Completed 4/10 tutorials in the series.
-- Difficulty: Medium-Hard (Not sure, didn't finish it.)
+- Difficulty: Medium-Hard
 
 <img src="/_demos/11-a-star-pathfinding-01.png" style="margin-top: 12px;" >
 
