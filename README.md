@@ -110,7 +110,10 @@ instead of doing it as my 5th one.
 ## A\* Pathfinding
 
 - [Sebastian Lague's A\* Pathfinding Tutorial](https://www.youtube.com/watch?v=-L-WgKMFuhE)
-- Difficulty: -
+- Completed 4/10 tutorials in the series.
+- Difficulty: Medium-Hard (Not sure, didn't finish it.)
+
+<img src="/_demos/11-a-star-pathfinding-01.png" style="margin-top: 12px;" >
 
 ## License
 
